@@ -1,0 +1,38 @@
+{% if messages %}
+<<<<<<< HEAD
+  <div class="container mt-4">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center shadow-sm" role="alert">
+        <strong>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            {{ _("Error") }}:
+          {% else %}
+            {{ message.tags|title }}:
+          {% endif %}
+        </strong>
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+=======
+  {% for message in messages %}
+    <div id="message" class="container">
+      <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        <strong>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            {{ _("Error") }}: 
+          {% else %}
+            {{ message.tags|title }}
+          {% endif %}
+        </strong>
+        {{ message }}
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+>>>>>>> 1754fd6 (Initial commit - School Finder project)
